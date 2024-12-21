@@ -4,6 +4,8 @@ metadata:
   name: deno-hono
   labels:
     app: deno-hono
+    # sablier.enable: "true"
+    # sablier.group: deno-api-services
 spec:
   replicas: 1
   selector:
@@ -39,12 +41,12 @@ metadata:
   name: deno-hono-ingress
 spec:
   rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: deno-hono
-            port:
-              name: web
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: deno-hono
+                port:
+                  name: web

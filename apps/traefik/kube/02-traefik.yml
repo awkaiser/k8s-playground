@@ -21,7 +21,12 @@ spec:
           image: traefik:v3.2
           args:
             - --api.insecure
+            - --providers.kubernetescrd
             - --providers.kubernetesingress
+            - --providers.kubernetesingress.allowemptyservices
+            - --serverstransport.insecureskipverify
+            - --experimental.plugins.sablier.moduleName=github.com/sablierapp/sablier
+            - --experimental.plugins.sablier.version=v1.8.1
           ports:
             - name: web
               containerPort: 80

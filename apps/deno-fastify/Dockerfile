@@ -6,11 +6,6 @@ EXPOSE 3000
 
 WORKDIR /app
 
-# RUN addgroup --system --gid 1001 denoland
-# RUN adduser --system --uid 1001 denoland
-
-# USER denoland
-
 COPY deno.* .
 COPY *.ts .
 
