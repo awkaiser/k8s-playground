@@ -1,0 +1,9 @@
+k8s_yaml('kubernetes.yaml')
+
+docker_build('deno-hono-image', '.',
+    live_update=[
+        sync('.', '/app'),
+    ]
+)
+
+k8s_resource('deno-hono', port_forwards=3001)

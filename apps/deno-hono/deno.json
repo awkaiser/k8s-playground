@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-env=LISTEN_HOST --allow-net=0.0.0.0:3001 main.ts",
+    "start": "deno run --allow-env=LISTEN_HOST --allow-net=0.0.0.0:3001 main.ts"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx"
+  }
+}

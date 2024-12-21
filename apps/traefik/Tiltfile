@@ -1,0 +1,5 @@
+k8s_yaml('kube/00-role.yml')
+k8s_yaml('kube/00-account.yml')
+k8s_yaml('kube/01-role-binding.yml')
+k8s_yaml('kube/02-traefik.yml')
+k8s_yaml('kube/02-traefik-services.yml')
