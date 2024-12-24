@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --watch --allow-env=NODE_V8_COVERAGE,V8_COVERAGE,LISTEN_HOST --allow-net=127.0.0.1:3000 --allow-sys=hostname,networkInterfaces main.ts",
-    "start": "deno run --allow-env=NODE_V8_COVERAGE,V8_COVERAGE,LISTEN_HOST --allow-net=127.0.0.1:3000 --allow-sys=hostname,networkInterfaces main.ts"
+    "dev": "deno run --watch --allow-env=NODE_V8_COVERAGE,V8_COVERAGE,LISTEN_HOST,LISTEN_PORT --allow-net=127.0.0.1:3001 --allow-sys=hostname,networkInterfaces main.ts",
+    "start": "deno run --allow-env=NODE_V8_COVERAGE,V8_COVERAGE,LISTEN_HOST,LISTEN_PORT --allow-net=127.0.0.1:3001 --allow-sys=hostname,networkInterfaces main.ts"
   }
 }

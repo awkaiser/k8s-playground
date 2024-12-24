@@ -6,4 +6,8 @@ docker_build('deno-fastify-image', '.',
     ]
 )
 
-k8s_resource('deno-fastify', port_forwards=3000)
+k8s_resource(
+    'deno-fastify', 
+    labels=['backend'],
+    port_forwards=3001
+)

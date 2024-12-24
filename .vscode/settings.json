@@ -1,3 +1,7 @@
 {
-  "deno.enable": true
+  "deno.enable": true,
+  "deno.disablePaths": [
+    "./apps/deno-nextjs-app-dir/src/app"
+  ],
+  "editor.defaultFormatter": "denoland.vscode-deno"
 }

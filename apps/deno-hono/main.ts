@@ -3,6 +3,7 @@
 import { Hono } from "npm:hono";
 
 const hostname = Deno.env.get("LISTEN_HOST");
+const port = Number(Deno.env.get("LISTEN_PORT"));
 
 const app = new Hono();
 
@@ -18,7 +19,7 @@ app.get("/", async (c) => {
 
     return {
       responseTime: Math.round(
-        performance.measure("delay", "request", "response").duration
+        performance.measure("delay", "request", "response").duration,
       ),
       service: "deno-hono",
     };
@@ -27,4 +28,4 @@ app.get("/", async (c) => {
   return c.json(await delayedResponse());
 });
 
-Deno.serve({ hostname, port: 3001 }, app.fetch);
+Deno.serve({ hostname, port }, app.fetch);

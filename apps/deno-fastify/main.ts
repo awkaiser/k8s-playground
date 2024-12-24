@@ -3,6 +3,7 @@
 import Fastify from "npm:fastify";
 
 const host = Deno.env.get("LISTEN_HOST");
+const port = Number(Deno.env.get("LISTEN_PORT"));
 
 const fastify = Fastify({ logger: !host });
 
@@ -18,7 +19,7 @@ fastify.get("/", async (_, reply) => {
 
     return {
       responseTime: Math.round(
-        performance.measure("delay", "request", "response").duration
+        performance.measure("delay", "request", "response").duration,
       ),
       service: "deno-fastify",
     };
@@ -29,7 +30,7 @@ fastify.get("/", async (_, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen({ host: host ?? "127.0.0.1", port: 3000 });
+    await fastify.listen({ host: host ?? "127.0.0.1", port });
   } catch (err) {
     fastify.log.error(err);
 

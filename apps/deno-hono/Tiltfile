@@ -6,4 +6,8 @@ docker_build('deno-hono-image', '.',
     ]
 )
 
-k8s_resource('deno-hono', port_forwards=3001)
+k8s_resource(
+    'deno-hono', 
+    labels=['backend'],
+    port_forwards=3002
+)
